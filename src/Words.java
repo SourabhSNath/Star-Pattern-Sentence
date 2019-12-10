@@ -7,20 +7,20 @@ public class Words {
         Scanner scanner = new Scanner(System.in);
         AlphabetGenerator alphabets = new AlphabetGenerator();
 
-        String word = scanner.nextLine();
-        word = word.toUpperCase();
 
+        String words = scanner.nextLine().toUpperCase().replaceAll(" ", "      ")
+                .replaceAll("[1-9]", "").trim();
         int n = 7;
 
 
         for (int i = 0; i < n; i++) {
 
 
-            for (int c = 0; c < word.length(); c++) {
+            for (int c = 0; c < words.length(); c++) {
 
                 System.out.print(" "); //For a margin at the beginning
 
-                switch (word.charAt(c)) {
+                switch (words.charAt(c)) {
                     case 'A':
                         alphabets.alphaA(i, n);
                         break;
